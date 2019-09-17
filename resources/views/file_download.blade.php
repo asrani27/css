@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="product-info">
-                        <a href="#" class="product-title">{{$item->nama_file}}</a><br />
+                        <a href="http://css-registration.banjarmasinkota.go.id/upload/file/{{$item->url_file}}" class="product-title">{{$item->nama_file}}</a><br />
                           <span class="product-description">
                                 {{$item->url_file}}
                           </span>
