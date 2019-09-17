@@ -32,4 +32,17 @@ class HomeController extends Controller
             return view('data_tamu',compact('id_guest','data'));
         }
     }
+
+    public function detailTamu($id_guest, $id_tamu)
+    {
+        $cek = Guest::where('id_guest', $id_guest)->first();
+        if($cek == null)
+        {
+            return view('errors.404');
+        }
+        else {
+            $tamu = Guest::where('id_guest', $id_tamu)->first();
+            return view('detail_tamu',compact('id_guest','id_tamu', 'tamu'));
+        }
+    }
 }

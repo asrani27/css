@@ -12,3 +12,4 @@
 */
 Route::get('/{id_guest}', 'HomeController@index');
 Route::get('/{id_guest}/data_tamu', 'HomeController@tamu');
+Route::get('/{id_guest}/data_tamu/{id_tamu}', 'HomeController@detailTamu');
