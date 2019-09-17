@@ -71,10 +71,11 @@
                 <b>Jenis Kelamin</b> <a class="pull-right">{{$tamu->jk}}</a>
               </li>
             </ul>
-
-            <a href="#" class="btn btn-danger"><b>Gmail</b></a>
-            <a href="#" class="btn btn-success"><b>WhatsApp</b></a>
-          </div>
+            <p class="text-center">
+                <a href="#"><img src="{{url('LTE/email.png')}}"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#"><img src="{{url('LTE/wa.png')}}"></a>
+            </p>
+        </div>
       </div>
   </section>
 </div>
