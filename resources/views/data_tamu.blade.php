@@ -31,11 +31,11 @@
               @foreach ($data as $item)
                 <li class="item">
                     <div class="product-img">
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY7-ub1NpIfh_Gu0qEPwjy1OKYXfCY3Yms34km__nZA0uUj005" class="img-circle" alt="User Image">
+                      <img src="http://css-registration.banjarmasinkota.go.id/upload/foto/{{$item->foto}}" class="img-circle" alt="User Image">
                     </div>
                     <div class="product-info">
                         <a href={{url("{$id_guest}/data_tamu/{$item->id_guest}")}} class="product-title">{{$item->nama_guest}}</a><br />
-                          <span>
+                          <span class="product-description">
                                 {{$item->instansi}}
                           </span>
                           <span class="product-description">

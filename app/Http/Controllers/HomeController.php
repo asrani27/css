@@ -50,4 +50,17 @@ class HomeController extends Controller
             return view('detail_tamu',compact('id_guest','id_tamu', 'tamu'));
         }
     }
+
+    public function profile($id_guest)
+    {
+        $cek = Guest::where('id_guest', $id_guest)->first();
+        if($cek == null)
+        {
+            return view('errors.404');
+        }
+        else {
+            $tamu = $cek;
+            return view('profile',compact('id_guest','tamu'));
+        }
+    }
 }
