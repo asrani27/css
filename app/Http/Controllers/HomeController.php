@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Guest;
+use App\File;
 
 class HomeController extends Controller
 {
@@ -74,6 +75,19 @@ class HomeController extends Controller
         else {
             $tamu = $cek;
             return view('edit_profile',compact('id_guest','tamu'));
+        }
+    }
+
+    public function file($id_guest)
+    {
+        $cek = Guest::where('id_guest', $id_guest)->first();
+        if($cek == null)
+        {
+            return view('errors.404');
+        }
+        else {
+            $file = File::all();
+            return view('file_download',compact('id_guest','file'));
         }
     }
 }
