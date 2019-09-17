@@ -74,6 +74,7 @@
             <p class="text-center">
                 <a href="https://mail.google.com/mail/"><img src="{{url('LTE/email.png')}}"></a> &nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://wa.me/62{{$tamu->whatsapp}}"><img src="{{url('LTE/wa.png')}}"></a>
+                <a href="https://api.whatsapp.com/send?phone=15551234567"><img src="{{url('LTE/wa.png')}}"></a>
             </p>
         </div>
       </div>
