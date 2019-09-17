@@ -41,7 +41,12 @@ class HomeController extends Controller
             return view('errors.404');
         }
         else {
-            $tamu = Guest::where('id_guest', $id_tamu)->first();
+            $getdata = Guest::where('id_guest', $id_tamu)->get();
+            $tamu = $getdata->map(function($item){
+                $item->whatsapp = ltrim($item->no_telepon, 0);
+                return $item;
+            })->first();
+            //dd($tamu);
             return view('detail_tamu',compact('id_guest','id_tamu', 'tamu'));
         }
     }

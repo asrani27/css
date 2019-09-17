@@ -72,8 +72,8 @@
               </li>
             </ul>
             <p class="text-center">
-                <a href="#"><img src="{{url('LTE/email.png')}}"></a> &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#"><img src="{{url('LTE/wa.png')}}"></a>
+                <a href="https://mail.google.com/mail/"><img src="{{url('LTE/email.png')}}"></a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://wa.me/62{{$tamu->whatsapp}}"><img src="{{url('LTE/wa.png')}}"></a>
             </p>
         </div>
       </div>
