@@ -14,3 +14,4 @@ Route::get('/{id_guest}', 'HomeController@index');
 Route::get('/{id_guest}/data_tamu', 'HomeController@tamu');
 Route::get('/{id_guest}/data_tamu/{id_tamu}', 'HomeController@detailTamu');
 Route::get('/{id_guest}/profile', 'HomeController@profile');
+Route::get('/{id_guest}/profile/edit', 'HomeController@editprofile');

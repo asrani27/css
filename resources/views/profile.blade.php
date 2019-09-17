@@ -9,7 +9,7 @@
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-        <a href="#" class="navbar-brand"><b>DETAIL TAMU</b></a>
+        <a href="#" class="navbar-brand"><b>PROFILE SAYA</b></a>
       </div>
     </div>
   </nav>
@@ -72,7 +72,7 @@
               </li>
             </ul>
             <p class="text-center">
-                <a href="#"><img src="{{url('LTE/edit.png')}}"></a>
+                <a href={{url("{$id_guest}/profile/edit")}}><img src="{{url('LTE/edit.png')}}"></a>
             </p>
         </div>
       </div>
