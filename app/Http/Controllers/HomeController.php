@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Guest;
 use App\File;
 use App\KabKota;
+use Storage;
 
 class HomeController extends Controller
 {
@@ -46,11 +47,21 @@ class HomeController extends Controller
 
             if($req->hasFile('file'))
             {
-                $image = $req->file('file');
-                $filename = $id_guest.'.'.$image->getClientOriginalExtension();
-                $path =  "/var/www/html/app_cssregis/upload/foto";
-                $image->move($path, $filename);
-                //dd($filename);
+                $upload = Storage::disk('upload')->exists($id_guest.'.jpg');
+                if($upload == true)
+                {
+                    $image = $req->file('file');
+                    $filename = $id_guest.'.'.$image->getClientOriginalExtension();
+                    $path =  "/var/www/html/app_cssregis/upload/foto";
+                    Storage::disk('upload')->put($path, $filename);
+                }
+                else {
+                    $image = $req->file('file');
+                    $filename = $id_guest.'.'.$image->getClientOriginalExtension();
+                    $path =  "/var/www/html/app_cssregis/upload/foto";
+                    $image->move($path, $filename);
+                }
+                
                 $up = Guest::where('id_guest', $id_guest)->first();
                 $up->nama_guest = $req->nama_guest;
                 $up->asal       = $req->asal;

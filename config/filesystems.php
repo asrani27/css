@@ -64,6 +64,10 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'upload' => [
+            'driver' => 'local',
+            'root' => '/var/www/html/app_cssregis/upload/foto/',
+        ],
     ],
 
 ];
