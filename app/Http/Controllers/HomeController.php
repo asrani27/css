@@ -51,6 +51,12 @@ class HomeController extends Controller
                 $upload = Storage::disk('upload')->exists($id_guest.'.jpg');
                 if($upload == true)
                 {
+                    // Jika Sudah Ada Image Hapus Dulu                    
+                    $myFile = '/var/www/html/app_cssregis/upload/foto/'.$id_guest.'.jpg';
+                    //dd($myFile);
+                    File::delete($myFile);
+
+                    // Upload Kembali Yang Baru
                     $image = $req->file('file');
                     $filename = $id_guest.'.'.$image->getClientOriginalExtension();
                     $path =  "/var/www/html/app_cssregis/upload/foto";
@@ -71,8 +77,7 @@ class HomeController extends Controller
                 $up->jk         = $req->jk;
                 $up->email      = $req->email;
                 $up->no_telepon = $req->no_telepon;
-                $up->foto_android = 'http://css-registration.banjarmasinkota.go.id/upload/foto/'.$filename;
-                $up->foto = $filename;
+                $up->foto       = $filename;
                 $up->save();
                 return redirect($id_guest.'/profile');
             }
