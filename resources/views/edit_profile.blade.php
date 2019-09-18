@@ -9,7 +9,7 @@
 <header class="main-header">
   <nav class="navbar navbar-static-top">
     <div class="container">
-      <div class="navbar-header">
+      <div class="navbar-header"><br>
         <a href="#" class="navbar-brand"><b>EDIT PROFILE</b></a>
       </div>
     </div>

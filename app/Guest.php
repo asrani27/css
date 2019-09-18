@@ -14,6 +14,8 @@ class Guest extends Model
 
     public $timestamps = false;
 
+    public $incrementing = false;
+    
     public function kabkota()
     {
         return $this->belongsTo(KabKota::class, 'asal', 'id_kab_kota');

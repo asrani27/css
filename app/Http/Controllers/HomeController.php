@@ -69,7 +69,7 @@ class HomeController extends Controller
                 $item->whatsapp = ltrim($item->no_telepon, 0);
                 return $item;
             })->first();
-            //dd($tamu);
+            
             return view('detail_tamu',compact('id_guest','id_tamu', 'tamu'));
         }
     }
