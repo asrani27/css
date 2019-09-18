@@ -57,8 +57,8 @@ class HomeController extends Controller
                     // Upload Kembali Yang Baru
                     $image = $req->file('file');
                     $filename = $id_guest.'.'.$image->getClientOriginalExtension();
-                    //$path =  "/var/www/html/app_cssregis/upload/foto";
-                    //$image->move($path, $filename);
+                    $path =  "/var/www/html/app_cssregis/upload/foto";
+                    $image->move($path, $filename);
                 }
                 else {
                     $image = $req->file('file');
