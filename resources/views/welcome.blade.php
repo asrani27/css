@@ -28,22 +28,22 @@
                 <div class="item active">
                   <img src="{{url('LTE/slide1edit.jpg')}}" style="height: 170px; width: 100%;" alt="First slide">
 
-                  <div class="carousel-caption">
+                  {{-- <div class="carousel-caption">
                     First Slide
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="item">
                   <img src="{{url('LTE/slide2edit.jpg')}}" style="height: 170px; width: 100%;" alt="Second slide">
 
-                  <div class="carousel-caption">
+                  {{-- <div class="carousel-caption">
                     Second Slide
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="item">
                   <img src="{{url('LTE/slide3edit.jpg')}}" style="height: 170px; width: 100%;"  alt="Third slide">
-                  <div class="carousel-caption">
+                  {{-- <div class="carousel-caption">
                     Third Slide
-                  </div>
+                  </div> --}}
                 </div>
               </div>
               <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
