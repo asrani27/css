@@ -46,8 +46,11 @@ class HomeController extends Controller
 
             if($req->hasFile('file'))
             {
-                $filename = $req->file->getClientOriginalName();
-                            
+                $image = $req->file('file');
+                $filename = time() . '.' . $image->getClientOriginalExtension();
+                $path =  "/var/www/html/app_cssregis/upload";
+                $image->move($path, $filename);
+                dd($filename, $path, public_path());
                 $req->file->storeAs('http://css-registration.banjarmasinkota.go.id/upload/foto',$filename);
                 
                 $up = Guest::where('id_guest', $id_guest)->first();
