@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Guest;
-use App\File;
+use App\FileDownload;
 use App\KabKota;
 use Storage;
+use File;
 
 class HomeController extends Controller
 {
@@ -143,7 +144,7 @@ class HomeController extends Controller
             return view('errors.404');
         }
         else {
-            $file = File::all();
+            $file = FileDownload::all();
             return view('file_download',compact('id_guest','file'));
         }
     }
