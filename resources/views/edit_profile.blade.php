@@ -42,7 +42,11 @@
             <label>Asal</label>
             <select class="form-control select2" style="width: 100%;" name="asal" >
               @foreach ($kab as $item)
+                @if($item->id_kab_kota == $tamu->asal)
+                <option value="{{$item->id_kab_kota}}" selected>{{$item->nama_kab_kota}}</option>
+                @else
                 <option value="{{$item->id_kab_kota}}">{{$item->nama_kab_kota}}</option>
+                @endif
               @endforeach
             </select>
           </div>

@@ -9,7 +9,7 @@
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header"><br>
-        <a href="#" class="navbar-brand"><b>CSS</b>-Registration</a>
+        <p class="text-center" style="color:white;font-size:18px;padding-top:20px;"><b>CSS</b> Banjarmasin 2019</p>
       </div>
     </div>
   </nav>
