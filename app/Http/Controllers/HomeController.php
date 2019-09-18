@@ -47,12 +47,10 @@ class HomeController extends Controller
             if($req->hasFile('file'))
             {
                 $image = $req->file('file');
-                $filename = time() . '.' . $image->getClientOriginalExtension();
-                $path =  "/var/www/html/app_cssregis/upload";
+                $filename = $id_guest.'.'.$image->getClientOriginalExtension();
+                $path =  "/var/www/html/app_cssregis/upload/foto";
                 $image->move($path, $filename);
-                dd($filename, $path, public_path());
-                $req->file->storeAs('http://css-registration.banjarmasinkota.go.id/upload/foto',$filename);
-                
+                //dd($filename);
                 $up = Guest::where('id_guest', $id_guest)->first();
                 $up->nama_guest = $req->nama_guest;
                 $up->asal       = $req->asal;
@@ -61,7 +59,8 @@ class HomeController extends Controller
                 $up->jk         = $req->jk;
                 $up->email      = $req->email;
                 $up->no_telepon = $req->no_telepon;
-                $up->foto_android = $filename;
+                $up->foto_android = 'http://css-registration.banjarmasinkota.go.id/upload/foto/'.$filename;
+                $up->foto = $filename;
                 $up->save();
                 return redirect($id_guest.'/profile');
             }
