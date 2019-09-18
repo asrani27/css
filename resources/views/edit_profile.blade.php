@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @push('add_css')
-
+<!-- Select2 -->
+<link rel="stylesheet" href="{{url('LTE/bower_components/select2/dist/css/select2.min.css')}}">
 @endpush
 
 @section('title')
@@ -19,8 +20,11 @@
 @section('content')
 <div class="container">
   <section class="content"> 
+
+    
     <div class="box">
-      <form role="form">
+    <form role="form" method="post" action="{{route('updatedata', $id_guest)}}" enctype="multipart/form-data">
+      @csrf
         <div class="box-body">
           <div class="form-group">
             <label>Nama</label>
@@ -34,9 +38,13 @@
             <label>Instansi</label>
             <input type="text" class="form-control" name="instansi" value="{{$tamu->instansi}}">
           </div>
-          <div class="form-group">
+          <div class="form-group">  
             <label>Asal</label>
-            <input type="text" class="form-control" name="asal" value="{{$tamu->asal}}">
+            <select class="form-control select2" style="width: 100%;" name="asal" >
+              @foreach ($kab as $item)
+                <option value="{{$item->id_kab_kota}}">{{$item->nama_kab_kota}}</option>
+              @endforeach
+            </select>
           </div>
           <div class="form-group">
             <label>Email</label>
@@ -77,5 +85,13 @@
 @endsection
 
 @push('add_js')
+<!-- Select2 -->
+<script src="{{url('LTE/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
+<script>
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+    })
+</script>
 @endpush

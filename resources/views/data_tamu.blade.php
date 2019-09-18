@@ -39,7 +39,7 @@
                                 {{$item->instansi}}
                           </span>
                           <span class="product-description">
-                                {{$item->asal}}
+                                {{$item->kabkota->nama_kab_kota}}
                           </span>
                     </div>
                 </li>

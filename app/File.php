@@ -8,5 +8,5 @@ class File extends Model
 {
     protected $table = 't_file';
 
-    public $timestamp = false;
+    public $timestamps = false;
 }

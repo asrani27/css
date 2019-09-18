@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Guest;
 use App\File;
+use App\KabKota;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,27 @@ class HomeController extends Controller
         else {
             $data = Guest::all();
             return view('data_tamu',compact('id_guest','data'));
+        }
+    }
+
+    public function updateprofile(Request $req, $id_guest)
+    {
+        $cek = Guest::where('id_guest', $id_guest)->first();
+        if($cek == null)
+        {
+            return view('errors.404');
+        }
+        else {
+            $up = Guest::where('id_guest', $id_guest)->first();
+            $up->nama_guest = $req->nama_guest;
+            $up->asal       = $req->asal;
+            $up->instansi   = $req->instansi;
+            $up->jabatan    = $req->jabatan;
+            $up->jk         = $req->jk;
+            $up->email      = $req->email;
+            $up->no_telepon = $req->no_telepon;
+            $up->save();
+            return redirect($id_guest.'/profile');
         }
     }
 
@@ -74,7 +96,8 @@ class HomeController extends Controller
         }
         else {
             $tamu = $cek;
-            return view('edit_profile',compact('id_guest','tamu'));
+            $kab = KabKota::all()->sortBy('nama_kab_kota');
+            return view('edit_profile',compact('id_guest','tamu','kab'));
         }
     }
 

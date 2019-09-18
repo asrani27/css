@@ -48,17 +48,17 @@
                 <b>Instansi</b> <a class="pull-right">{{$tamu->instansi}}</a>
               </li>
               @endif
-              @if(strlen($tamu->asal) <= 40)
+              @if(strlen($tamu->kabkota->nama_kab_kota) <= 40)
               <li class="list-group-item">
-                <b>Asal</b> <a class="pull-right">{{$tamu->asal}}</a>
+                <b>Asal</b> <a class="pull-right">{{$tamu->kabkota->nama_kab_kota}}</a>
               </li>
-              @elseif(strlen($tamu->asal) >= 41 AND strlen($tamu->asal) <= 45)
+              @elseif(strlen($tamu->kabkota->nama_kab_kota) >= 41 AND strlen($tamu->kabkota->nama_kab_kota) <= 45)
               <li class="list-group-item" style="padding-bottom:25px;">
-                <b>Asal</b> <a class="pull-right">{{$tamu->asal}}</a>
+                <b>Asal</b> <a class="pull-right">{{$tamu->kabkota->nama_kab_kota}}</a>
               </li>
-              @elseif(strlen($tamu->asal) >= 46)
+              @elseif(strlen($tamu->kabkota->nama_kab_kota) >= 46)
               <li class="list-group-item" style="padding-bottom:45px;">
-                <b>Asal</b> <a class="pull-right">{{$tamu->asal}}</a>
+                <b>Asal</b> <a class="pull-right">{{$tamu->kabkota->nama_kab_kota}}</a>
               </li>
               @endif
               <li class="list-group-item">
