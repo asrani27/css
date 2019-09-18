@@ -26,21 +26,21 @@
         </ol>
               <div class="carousel-inner">
                 <div class="item active">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4QVDyHPCIA9zumIIa2gfXUYRXl25c_x3oTSyuGM2UmWEojXom" style="height: 170px; width: 100%;" alt="First slide">
+                  <img src="{{url('LTE/slide1.jpeg')}}" style="height: 170px; width: 100%;" alt="First slide">
 
                   <div class="carousel-caption">
                     First Slide
                   </div>
                 </div>
                 <div class="item">
-                  <img src="https://weirdgopro.files.wordpress.com/2010/09/cropped-wallpaper-1440x900-700x200.jpg" style="height: 170px; width: 100%;" alt="Second slide">
+                  <img src="{{url('LTE/slide2.jpeg')}}" style="height: 170px; width: 100%;" alt="Second slide">
 
                   <div class="carousel-caption">
                     Second Slide
                   </div>
                 </div>
                 <div class="item">
-                  <img src="https://weirdgopro.files.wordpress.com/2010/09/cropped-wallpaper-1440x900-700x200.jpg" style="height: 170px; width: 100%;"  alt="Third slide">
+                  <img src="{{url('LTE/slide3.jpeg')}}" style="height: 170px; width: 100%;"  alt="Third slide">
                   <div class="carousel-caption">
                     Third Slide
                   </div>
