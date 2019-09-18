@@ -52,16 +52,13 @@ class HomeController extends Controller
                 if($upload == true)
                 {
                     // Jika Sudah Ada Image Hapus Dulu  
-                    $deleteFoto = Storage::disk('upload')->delete($id_guest.'.jpg');                  
-                    // $myFile = '/var/www/html/app_cssregis/upload/foto/'.$id_guest.'.jpg';
-                    // //dd($myFile);
-                    // File::delete($myFile);
+                    $deleteFoto = Storage::disk('upload')->delete($id_guest.'.jpg');          
 
                     // Upload Kembali Yang Baru
                     $image = $req->file('file');
                     $filename = $id_guest.'.'.$image->getClientOriginalExtension();
-                    $path =  "/var/www/html/app_cssregis/upload/foto";
-                    Storage::disk('upload')->put($path, $filename);
+                    //$path =  "/var/www/html/app_cssregis/upload/foto";
+                    //$image->move($path, $filename);
                 }
                 else {
                     $image = $req->file('file');
