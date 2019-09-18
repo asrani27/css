@@ -43,16 +43,37 @@ class HomeController extends Controller
             return view('errors.404');
         }
         else {
-            $up = Guest::where('id_guest', $id_guest)->first();
-            $up->nama_guest = $req->nama_guest;
-            $up->asal       = $req->asal;
-            $up->instansi   = $req->instansi;
-            $up->jabatan    = $req->jabatan;
-            $up->jk         = $req->jk;
-            $up->email      = $req->email;
-            $up->no_telepon = $req->no_telepon;
-            $up->save();
-            return redirect($id_guest.'/profile');
+
+            if($req->hasFile('file'))
+            {
+                $filename = $req->file->getClientOriginalName();
+                            
+                $req->file->storeAs('http://css-registration.banjarmasinkota.go.id/upload/foto',$filename);
+                
+                $up = Guest::where('id_guest', $id_guest)->first();
+                $up->nama_guest = $req->nama_guest;
+                $up->asal       = $req->asal;
+                $up->instansi   = $req->instansi;
+                $up->jabatan    = $req->jabatan;
+                $up->jk         = $req->jk;
+                $up->email      = $req->email;
+                $up->no_telepon = $req->no_telepon;
+                $up->foto_android = $filename;
+                $up->save();
+                return redirect($id_guest.'/profile');
+            }
+            else {
+                $up = Guest::where('id_guest', $id_guest)->first();
+                $up->nama_guest = $req->nama_guest;
+                $up->asal       = $req->asal;
+                $up->instansi   = $req->instansi;
+                $up->jabatan    = $req->jabatan;
+                $up->jk         = $req->jk;
+                $up->email      = $req->email;
+                $up->no_telepon = $req->no_telepon;
+                $up->save();
+                return redirect($id_guest.'/profile');
+            }        
         }
     }
 
