@@ -8,7 +8,7 @@
 <header class="main-header">
   <nav class="navbar navbar-static-top">
     <div class="container">
-      <div class="navbar-header"><br>
+      <div class="navbar-header">
         <p class="text-center" style="color:white;font-size:18px;padding-top:20px;"><b>CSS</b> Banjarmasin 2019</p>
       </div>
     </div>
