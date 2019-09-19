@@ -61,6 +61,7 @@
         <a type="button" class="btn btn-lg btn-block btn-success" href={{url("{$id_guest}/data_tamu")}}>DATA TAMU</a>
           <a type="button" class="btn btn-lg btn-block btn-success" href={{url("{$id_guest}/file_download")}}>FILE DOWNLOAD</a>
           <a type="button" class="btn btn-lg btn-block btn-success" href={{url("{$id_guest}/profile")}}>PROFILE</a>
+          <a type="button" class="btn btn-lg btn-block btn-success" href={{url("{$id_guest}/chat")}}>CHAT</a>
          </div>
       </div>
   </section>
