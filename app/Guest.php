@@ -20,4 +20,9 @@ class Guest extends Model
     {
         return $this->belongsTo(KabKota::class, 'asal', 'id_kab_kota');
     }
+
+    public function chat()
+    {
+        return $this->hasMany(Chat::class, 'id_guest', 'id_guest');
+    }
 }

@@ -8,6 +8,7 @@ use App\FileDownload;
 use App\KabKota;
 use Storage;
 use File;
+use App\Chat;
 
 class HomeController extends Controller
 {
@@ -149,6 +150,20 @@ class HomeController extends Controller
         else {
             $file = FileDownload::all();
             return view('file_download',compact('id_guest','file'));
+        }
+    }
+
+    public function chat($id_guest)
+    {
+        $cek = Guest::where('id_guest', $id_guest)->first();
+        if($cek == null)
+        {
+            return view('errors.404');
+        }
+        else {
+            $dat = Chat::all();
+            $data = $dat->sortByDesc('id');
+            return view('chat',compact('data','id_guest'));
         }
     }
 }
