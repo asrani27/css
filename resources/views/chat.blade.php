@@ -177,7 +177,7 @@
     $(document).ready(function(){
       Echo.channel('channelDemoEvent')
       .listen('eventTrigger', (e) => {
-        alert('ada chat masuk');
+        location.reload();
       });
     });
 </script>
