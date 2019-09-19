@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Guest;
 use App\Chat;
+use App\Events\eventTrigger;
 
 class ChatController extends Controller
 {
@@ -21,6 +22,7 @@ class ChatController extends Controller
             $s->id_guest = $id_guest;
             $s->pesan = $req->pesan;
             $s->save();
+            event(new eventTrigger());
             return back();
         }
     }

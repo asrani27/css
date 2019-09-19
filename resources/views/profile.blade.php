@@ -72,7 +72,7 @@
               </li>
             </ul>
             <p class="text-center">
-                <a href={{url("{$id_guest}/profile/edit")}}><img src="{{url('LTE/edit.png')}}"></a>
+                <a href={{url("home/{$id_guest}/profile/edit")}}><img src="{{url('LTE/edit.png')}}"></a>
             </p>
         </div>
       </div>

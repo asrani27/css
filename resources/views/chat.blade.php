@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -75,10 +76,9 @@
                 </div>
               </div>
             </div>
-            <div class="box-body chat" id="chat-box">
+            <div class="box-body chat ajax-data" id="chat-box">
               <!-- chat item -->
               @foreach ($data as $item)
-                  
               <div class="item">
                 <img src="http://www.tuktukdesign.com/wp-content/uploads/2017/12/person-icon.jpg" alt="user image" class="online">
                 <p class="message">
@@ -88,13 +88,14 @@
                   </a>
                  {{$item->pesan}}
                 </p>
-                <!-- /.attachment -->
               </div>
+
               @endforeach
               
             
             </div>
             <!-- /.chat -->
+          <input type="hidden" name="id_g" id="id_g" value="{{$id_guest}}">
             <form method="POST" action={{route('msg', $id_guest)}}>
               @csrf
             <div class="box-footer">
@@ -132,6 +133,13 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="{{url('LTE/bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
+{{-- <script language="javascript">
+    setTimeout(function(){
+       window.location.reload(1);
+    }, 3000);
+    console.log('reload');
+</script> --}}
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
@@ -164,5 +172,14 @@
 <script src="{{url('LTE/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('LTE/dist/js/demo.js')}}"></script>
+{{-- <script src="../../js/app.js"></script> --}}
+<script type="text/javascript">
+    $(document).ready(function(){
+      Echo.channel('channelDemoEvent')
+      .listen('eventTrigger', (e) => {
+        alert('ada chat masuk');
+      });
+    });
+</script>
 </body>
 </html>

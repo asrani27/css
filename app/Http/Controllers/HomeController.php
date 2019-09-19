@@ -78,7 +78,7 @@ class HomeController extends Controller
                 $up->no_telepon = $req->no_telepon;
                 $up->foto       = $filename;
                 $up->save();
-                return redirect($id_guest.'/profile');
+                return redirect('home/'.$id_guest.'/profile');
             }
             else {
                 $up = Guest::where('id_guest', $id_guest)->first();
@@ -90,7 +90,7 @@ class HomeController extends Controller
                 $up->email      = $req->email;
                 $up->no_telepon = $req->no_telepon;
                 $up->save();
-                return redirect($id_guest.'/profile');
+                return redirect('home/'.$id_guest.'/profile');
             }        
         }
     }
@@ -164,6 +164,20 @@ class HomeController extends Controller
             $dat = Chat::all();
             $data = $dat->sortByDesc('id');
             return view('chat',compact('data','id_guest'));
+        }
+    }
+
+    public function chatajax($id_guest)
+    {
+        $cek = Guest::where('id_guest', $id_guest)->first();
+        if($cek == null)
+        {
+            return view('errors.404');
+        }
+        else {
+            $dat = Chat::all();
+            $data = $dat->sortByDesc('id');
+            return response()->json($data);
         }
     }
 }

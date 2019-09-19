@@ -42,7 +42,7 @@
                     </td>
                     <td>
                     <div class="product-info">
-                        <a href={{url("{$id_guest}/data_tamu/{$item->id_guest}")}} class="product-title">{{$item->nama_guest}}</a><br />
+                        <a href={{url("home/{$id_guest}/data_tamu/{$item->id_guest}")}} class="product-title">{{$item->nama_guest}}</a><br />
                           <span class="product-description">
                                 {{$item->instansi}}
                           </span>
