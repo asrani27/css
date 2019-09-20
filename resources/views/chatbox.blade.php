@@ -71,7 +71,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <!-- Conversations are loaded here -->
-              <div class="direct-chat-messages">
+              <div class="direct-chat-messages" id="divExample">
                 
                 <!-- /.direct-chat-msg -->
                 @foreach ($data as $item)
@@ -346,6 +346,9 @@
     .listen('eventTrigger', (e) => {
       location.reload();
     });
+
+    var objDiv = document.getElementById("divExample");
+    objDiv.scrollTop = objDiv.scrollHeight;
   });
 </script>
 <!-- jQuery 3 -->

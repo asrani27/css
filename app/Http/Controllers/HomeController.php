@@ -175,8 +175,7 @@ class HomeController extends Controller
             return view('errors.404');
         }
         else {
-            $dat = Chat::all();
-            $data = $dat->sortByDesc('id');
+            $data = Chat::all();
             return view('chatbox',compact('data','id_guest'));
         }
     }
