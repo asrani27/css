@@ -118,7 +118,7 @@
                 <form method="POST" action={{route('msg', $id_guest)}}>
                   @csrf
                 <div class="input-group">
-                  <input type="text" name="message" placeholder="Type Message ..." name="pesan" required class="form-control">
+                  <input type="text" name="pesan" placeholder="Type Message ..." required class="form-control">
                       <span class="input-group-btn">
                         <button type="submit" class="btn btn-success btn-flat">Send</button>
                       </span>
