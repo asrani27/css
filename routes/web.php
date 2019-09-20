@@ -18,6 +18,7 @@ Route::get('home/{id_guest}/profile', 'HomeController@profile');
 Route::get('home/{id_guest}/profile/edit', 'HomeController@editprofile');
 Route::post('home/{id_guest}/profile/update', 'HomeController@updateprofile')->name('updatedata');
 Route::get('home/{id_guest}/chat', 'HomeController@chat');
+Route::get('home/{id_guest}/chatbox', 'HomeController@chatbox');
 Route::post('home/{id_guest}/chat/msg', 'ChatController@msg')->name('msg');
 
 //Route For AJax

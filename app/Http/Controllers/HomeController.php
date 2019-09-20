@@ -167,6 +167,20 @@ class HomeController extends Controller
         }
     }
 
+    public function chatbox($id_guest)
+    {
+        $cek = Guest::where('id_guest', $id_guest)->first();
+        if($cek == null)
+        {
+            return view('errors.404');
+        }
+        else {
+            $dat = Chat::all();
+            $data = $dat->sortByDesc('id');
+            return view('chatbox',compact('data','id_guest'));
+        }
+    }
+
     public function chatajax($id_guest)
     {
         $cek = Guest::where('id_guest', $id_guest)->first();
