@@ -17,7 +17,8 @@ class ChatController extends Controller
             return view('errors.404');
         }
         else {
-            
+            $now = \Carbon\Carbon::now();
+            //dd($now);
             $s = new Chat;
             $s->id_guest = $id_guest;
             $s->pesan = $req->pesan;
