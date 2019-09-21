@@ -31,16 +31,16 @@
           <input type="text" class="form-control" name="nama_guest" value="{{$tamu->nama_guest}}">
           </div>
           <div class="form-group">
-            <label>Jabatan</label>
-            <input type="text" class="form-control" name="jabatan" value="{{$tamu->jabatan}}">
+            {{-- <label>Jabatan</label> --}}
+            <input type="hidden" class="form-control" name="jabatan" value="{{$tamu->jabatan}}">
           </div>
           <div class="form-group">
-            <label>Instansi</label>
-            <input type="text" class="form-control" name="instansi" value="{{$tamu->instansi}}">
+            {{-- <label>Instansi</label> --}}
+            <input type="hidden" class="form-control" name="instansi" value="{{$tamu->instansi}}">
           </div>
           <div class="form-group">  
-            <label>Asal</label>
-            <select class="form-control select2" style="width: 100%;" name="asal" >
+            {{-- <label>Asal</label> --}}
+            <select class="form-control select" style="width: 100%;display:none;" name="asal">
               @foreach ($kab as $item)
                 @if($item->id_kab_kota == $tamu->asal)
                 <option value="{{$item->id_kab_kota}}" selected>{{$item->nama_kab_kota}}</option>
@@ -59,8 +59,8 @@
             <input type="text" class="form-control" name="no_telepon" value="{{$tamu->no_telepon}}">
           </div>
           <div class="form-group">
-            <label>Jenis Kelamin</label>
-            <select class="form-control" name="jk">
+            {{-- <label>Jenis Kelamin</label> --}}
+            <select class="form-control" name="jk" style="display:none;">
                 @if($tamu->jk == 'Pria')
                     <option value="Pria" selected>Pria</option>
                     <option value="Wanita">Wanita</option>
