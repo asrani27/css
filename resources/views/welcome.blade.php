@@ -9,7 +9,7 @@
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-        <p class="text-center" style="color:white;font-size:18px;padding-top:20px;"><b>CSS</b> Banjarmasin 2019</p>
+        <p class="text-center" style="color:white;font-size:18px;padding-top:10px;"><b>CSS</b> Banjarmasin 2019</p>
       </div>
     </div>
   </nav>
