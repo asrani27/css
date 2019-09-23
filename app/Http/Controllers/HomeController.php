@@ -33,7 +33,7 @@ class HomeController extends Controller
             return view('errors.404');
         }
         else {
-            $data = Guest::all();
+            $data = Guest::where('datang','Datang')->get();
             return view('data_tamu',compact('id_guest','data'));
         }
     }
