@@ -214,6 +214,10 @@ class HomeController extends Controller
         $s->no_telepon = $req->no_telepon;
         $s->datang = $req->datang;
         $s->save();
-        return back();
+        
+        $pesan = array(
+            'message' => 'Data Berhasil Di Update!', 
+            'alert-type' => 'success');
+        return back()->with($pesan);
     }
 }

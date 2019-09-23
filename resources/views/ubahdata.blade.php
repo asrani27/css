@@ -33,15 +33,31 @@
         <button type='submit'>SIMPAN</button>
         </form>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-
-<script>
-    
-$(document).ready(function() {
-    $('.js-example-basic-multiple').select2();
-});
-$(".js-example-tags").select2({
-  tags: true
-});
-</script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+        <script>
+            @if(Session::has('message'))
+              var type = "{{ Session::get('alert-type', 'info') }}";
+              switch(type){
+                  case 'info':
+                      toastr.info("{{ Session::get('message') }}");
+                      break;
+                  
+                  case 'warning':
+                      toastr.warning("{{ Session::get('message') }}");
+                      break;
+          
+                  case 'error':
+                      toastr.error("{{ Session::get('message') }}");
+                      break;
+                      
+                  case 'success':
+                      toastr.success("{{ Session::get('message') }}");
+                      break;
+          
+              }
+            @endif
+        </script>
+        
 </body>
 </html>
