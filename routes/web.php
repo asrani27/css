@@ -20,6 +20,8 @@ Route::post('home/{id_guest}/profile/update', 'HomeController@updateprofile')->n
 Route::get('home/{id_guest}/chat', 'HomeController@chat');
 Route::get('home/{id_guest}/chatbox', 'HomeController@chatbox');
 Route::post('home/{id_guest}/chat/msg', 'ChatController@msg')->name('msg');
+Route::get('updatedata/{qr_kode}', 'HomeController@updatedata');
+Route::post('updatedata/{qr_kode}', 'HomeController@storeupdatedata')->name('storeupdate');
 
 //Route For AJax
 Route::get('/chat/{id_guest}', 'HomeController@chatajax');

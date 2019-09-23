@@ -193,4 +193,27 @@ class HomeController extends Controller
             return response()->json($data);
         }
     }
+
+    public function updatedata($qr_kode)
+    {
+        $data = Guest::where('id_guest', $qr_kode)->first();
+        //dd($data);
+        $kota = KabKota::all()->sortBy('nama_kab_kota');
+        return view('ubahdata',compact('data','kota'));
+    }
+    public function storeupdatedata(Request $req, $qr_kode)
+    {
+        //dd($req->all(), $qr_kode);
+        $s = Guest::where('id_guest', $qr_kode)->first();
+        $s->nama_guest = $req->nama_guest;
+        $s->asal = $req->asal;
+        $s->instansi = $req->instansi;
+        $s->jabatan = $req->jabatan;
+        $s->jk = $req->jk;
+        $s->email = $req->email;
+        $s->no_telepon = $req->no_telepon;
+        $s->datang = $req->datang;
+        $s->save();
+        return back();
+    }
 }
